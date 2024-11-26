@@ -1,7 +1,6 @@
 
 
-console.log("hello world");
-
+console.log("hello world")
 var i = "hello";
 i =5;
 var i ="zero";
@@ -9,7 +8,6 @@ var i ="zero";
 
 let j =0;
 j=5;
-
 
 const f= 0;
 
