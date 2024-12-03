@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    
+<h1 id="one"></h1>
+<button id="btn" onclick="myFunction()">night</button>
+<button id="btn" onclick="myFunction1()">day</button>
+<button id="btn" onclick="document.write(5+6)">add</button>
+
+    <script>
+        console.log("dfg")
+        document.getElementById("one").innerHTML = "one"
+        document.write("write")
+      function myFunction(){
+        document.getElementById("body").style.backgroundColor = "black"
+        document.getElementById("body").style.color = "white"
+      }
+
+      function myFunction1(){
+        document.getElementById("body").style.backgroundColor = "white"
+        document.getElementById("body").style.color = "black"
+
+      }
+    </script>
+</body>
+</html>
