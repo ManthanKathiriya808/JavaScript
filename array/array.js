@@ -23,3 +23,8 @@ let arr= [1,2,3,9,5,6,7,8]
 
 console.log(arr.indexOf(6))
 console.log(arr.length)
+
+
+let arr1 =  [1,2,3,4,5]
+
+console.log(arr1.join("-"))
