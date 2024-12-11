@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="power">power</button>
+    <button id="odd">odd</button>
+    <button id="even">even</button>
+    <button id="isprime">isprime</button>
+    <h1 id="one"></h1>
+</body>
+
+<script>
+    let arr =[1,2,3,4,5,6,7,8,9]
+    document.getElementById("power").onclick = function(){
+        let power = arr.map((elem) => elem * elem)
+        document.getElementById("one").innerHTML = power
+    }
+
+    document.getElementById("odd").onclick = function(){
+        let odd = arr.filter((elem) => elem%2==1)
+        document.getElementById("one").innerHTML = odd
+    }
+
+    document.getElementById("even").onclick = function(){
+        let even = arr.filter((ele) => ele%2==0)
+        document.getElementById("one").innerHTML = even
+    }
+    document.getElementById("isprime").onclick = function(){
+        let isprime = arr.map((elem) => {
+            let count =0
+            for(let i=2 ; i<ele ; i++){
+                    if(ele%2==0){
+                        count++
+                    }
+                }
+            if(count ==0){
+                return "prime"
+            }
+            else{
+                return "Not Prime"
+            }
+        })
+    }
+    
+</script>
+</html>
