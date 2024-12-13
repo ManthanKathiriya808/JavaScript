@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alls()">all</button>
+    <button onclick="price()">price</button>
+   
+    <button onclick="electronic()">electronic</button> 
+    <button id="replace">replace</button> 
+    <p id="one">Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+    <p ></p>
+</body>
+<script>
+    let data = [
+        {
+            "id" :1,
+            "name" :"one",
+            "category" : "electronic"
+        },
+        {
+            "id" :2,
+            "name" :"two",
+            "category" : "mouse"
+        },
+        {
+            "id" :3,
+            "name" :"three",
+            "category" : "laptop"
+        },
+        {
+            "id" :4,
+            "name" :"four",
+            "category" : "computer"
+        },
+        {
+            "id" :5,
+            "name" :"five",
+            "category" : "car"
+        },
+        {
+            "id" :6,
+            "name" :"six",
+            "category" : "bike"
+        },
+        {
+            "id" :7,
+            "name" :"seven",
+            "category" : "game"
+        },
+        {
+            "id" :8,
+            "name" :"eight",
+            "category" : "cloth"
+        },
+    ]
+
+
+    function alls(){
+    data.map((ele) => document.write(`<h2>id := ${ele.id} Name : ${ele.name}</h2> <br>`))
+}
+
+function price(){
+    let subdata = data.filter((item) => item.id > 5)
+    console.log( subdata)
+    subdata.map((ele) => document.write(`<h2>id := ${ele.id} Name : ${ele.name}</h2> <br>`)) 
+}
+
+function electronic(){
+    let subdata = data.filter((item) => item.category == "cloth")
+    console.log(subdata) 
+    subdata.map((ele) => document.write(`<h2>id := ${ele.id} Name : ${ele.name}</h2> <br>`)     )
+}
+
+
+document.getElementById("replace").onclick = function(){
+  let text=  document.getElementById("one").innerHTML 
+  document.getElementById("one").innerHTML = text.replace("Microsoft","W3Schools")
+
+
+}
+</script>
+</html>

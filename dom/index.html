@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+    
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            margin: auto;
+            max-width: 1320px;
+        }
+        .d-flex{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .bigbox{
+            width: 22%;
+            padding: 10px;
+       
+        }
+
+        .box{
+            border-radius: 10px;
+            height: 100%;
+               box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.582);
+               padding: 10px;
+        }
+        .box > img{
+            width: 100%;
+            height: 300px;
+            border: 1px solid gainsboro;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex" id="boxes">
+
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+<script>
+    let boxes =document.querySelector("#boxes")
+
+
+    let box =document.createElement("div")
+    box.setAttribute("class","bigbox")
+    let sub_box = document.createElement("div")
+    sub_box.setAttribute("class","box")
+    let title = querySelector("h3")
+    let price = querySelector("h3")
+    let img = querySelector("img")
+    box.append(sub_box)
+    boxes.append(box)
+</script>
+</html>
