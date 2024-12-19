@@ -1,6 +1,16 @@
 let product = document.querySelector("#products")
 
+let search = document.getElementById("search")
 
+search.addEventListener("keyup",function(e){
+
+  let val =  e.target.value.toUpperCase()
+
+  let searchData = prod.filter((ele) => !ele.title.toUpperCase().indexOf(val) || !ele.category.toUpperCase().indexOf(val))
+console.log(searchData)
+
+showDown(searchData)
+})
 
 
 function audio(){
