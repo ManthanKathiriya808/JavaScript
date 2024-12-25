@@ -84,7 +84,9 @@ prod.map((ele) => {
     let price = document.createElement("h5")
     price.setAttribute("class", "text-danger")
 
-
+// document.getElementById("one").classList.add("mantjasdm")
+// document.getElementById("one").classList.remove("mantjasdm")
+// document.getElementById("one").classList.toggle("mantjasdm")
     img.src=ele.image
     title.textContent = `${ele.title}`
     price.textContent = `$ ${ele.price}`
