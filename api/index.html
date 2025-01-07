@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>image</th>
+                <th>Name</th>
+                <th>price</th>
+            </tr>
+        </thead>
+        <tbody id="product">
+
+        </tbody>
+    </table>
+</body>
+
+
+<script>
+
+
+let data
+window.onload = showData(data)
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET','https://api.escuelajs.co/api/v1/products')
+
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState ==1){
+            console.log("dataUnset" + xhr.readyState)
+        }
+
+        if(xhr.readyState ==2){
+            console.log("Open :" + xhr.readyState)
+        }
+        if(xhr.readyState ==3){
+            console.log("loading :" + xhr.readyState)
+        }
+        if(xhr.readyState ==4){
+           data = JSON.parse(xhr.responseText)
+            console.log(data)
+        }
+    }
+
+    xhr.send()
+
+
+
+  
+
+
+
+function showData(data){
+  let product = document.getElementById("product")
+    
+  product.innerHTML = ""
+    data.map((ele) => {
+    product.innerHTML+= `
+        <tr>
+             <td>${ele.category.image}</td>
+            </tr>
+    `
+    })
+}
+    
+</script>
+</html>

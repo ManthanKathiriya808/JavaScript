@@ -16,8 +16,9 @@ let data =[
     
     
 ]
+
 let tbody = document.querySelector("#tbody");
- let id = document.querySelector("#id")
+let id = document.querySelector("#id")
 
 document.querySelector("#form").addEventListener("submit",function(e){
 
@@ -32,7 +33,7 @@ document.querySelector("#form").addEventListener("submit",function(e){
                  ele.email =document.querySelector("#email").value ,
                  ele.age =document.querySelector("#age").value 
              }
- 
+
              return ele;
           })
           showData(updatedData)
