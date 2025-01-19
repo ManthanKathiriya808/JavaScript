@@ -9,8 +9,61 @@
     
 </body>
 
-
 <script>
+    
 
+        let prom1 = new Promise((resolve, reject) => {
+            let a = Math.random();
+
+            console.log(a)
+            if(a  < 0.5){
+                reject("No random number  is found")
+            }
+
+            else{
+
+                      setTimeout(() => {
+                console.log("hellol this is me")
+                resolve("hello")
+            },2000)
+        }
+        
+    })
+        let prom2 = new Promise((resolve, reject) => {
+            let a = Math.random();
+
+            console.log(a)
+            if(a  < 0.5){
+                reject("No random number  is found2")
+            }
+
+            else{
+
+                      setTimeout(() => {
+                console.log("hellol this is me2")
+                resolve("hello2")
+            },2000)
+        }
+        
+    })
+
+
+        // prom1.then((a)=> {
+        //     console.log(a)
+        // }).catch((err)=>{
+        //     console.log(err)
+        // })
+
+// promis.all
+// promis.allSettled
+// promis.race
+        let p3 = Promise.all([prom1,prom2])
+
+        p3.then((a) =>{
+            console.log(a)
+        }).catch((err) => {
+            console.log(err)
+        })
+        
 </script>
 </html>
