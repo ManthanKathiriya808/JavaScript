@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display API Images</title>
+</head>
+<body>
+    <div id="id"></div>
+</body>
+<script>
+    async function getData() {
+        try {
+            let response = await fetch('https://api.escuelajs.co/api/v1/products');
+            let products = await response.json();
+            showData(products);
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    }
+
+    const showData = (data) => {
+        const container = document.getElementById("id");
+        data.forEach((product) => {
+            // Check if category and image exist
+            if (product.category && product.category.image) {
+                const imgElement = document.createElement("img");
+                imgElement.src = product.category.image;
+                imgElement.alt = product.category.name || "Product Image";
+                imgElement.style.width = "150px"; // Optional: to limit image size
+                imgElement.style.margin = "10px"; // Optional: for spacing
+                container.appendChild(imgElement);
+            }
+        });
+    };
+
+    getData();
+</script>
+</html>

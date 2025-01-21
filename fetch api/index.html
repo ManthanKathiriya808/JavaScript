@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="id" style="" >
+    
+    <div >
+
+    </div>
+</body>
+
+<script>
+
+
+async function getData(){
+
+
+    try{
+   let data = await fetch('https://randomuser.me/api/?results=10')
+
+   let subdata = await data.json();
+
+   console.log(subdata)
+
+   showData(subdata.results)
+
+    }
+    catch(err){
+        console.log("the error is" + err)
+    }
+}
+
+
+getData()
+const showData = (data)=>{
+    
+    data.map((ele) =>{
+
+        return document.getElementById("id").innerHTML += `
+             <img src="${ele.picture.large}">
+              <h2>${ele.name.first} ${ele.name.last}</h2>
+        `
+    })
+}
+</script>
+</html>
