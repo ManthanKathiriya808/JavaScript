@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            display:flex;
+            border:2px solid black;
+            width:900px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image img{
+            width:200px
+        }
+
+        h1 p{
+            padding: 6px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      
+    </div>
+</body>
+
+<script>
+
+    function createCard(title,cName,views,monthsOld, duration, thumbnail ){
+        let viewsStr
+        if (views < 100000){
+             viewsStr = views/1000 + "K;"
+        }
+       else if (views > 100000){
+             viewsStr = views/100000 + "M;"
+        }
+        let html = `
+             <div class="card">
+            <div class="image">
+                <img src="${thumbnail}" alt="">
+            </div>
+            <div class="text">
+                <h1>${title}</h1>
+                <p>${cName} . ${viewsStr} views . ${monthsOld} months ago</p>
+            </div>
+        </div>
+        `
+
+
+        document.querySelector(".container").innerHTML =    document.querySelector(".container").innerHTML  +  html
+    }
+
+
+    createCard("Introduction to Backend | Sigma Web Dev video #2", "CodeWithHarry", 560000, 7, "31:22", "https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACwWOixJVrKLFindK92kYMgTcQbw")
+
+</script>
+</html>
